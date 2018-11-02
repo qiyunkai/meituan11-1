@@ -31,11 +31,20 @@ gulp.task('devServer', function() {
 
                 if (pathname === '/api/list') {
                     res.end(JSON.stringify({ code: 0, data: listJson }))
+                } else if (pathname === '/api/search') {
+                    var val = url.parse(req.url, true).query.key;
+                    var arr = [];
+                    listJson.forEach(file => {
+                        if (file.name.match(val) != null && file.name.match(val)) {
+                            arr.push(file)
+                        }
+                    });
+
+                    res.end(JSON.stringify({ code: 0, data: arr }))
                 } else {
                     pathname = pathname === '/' ? 'index.html' : pathname;
                     res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)))
                 }
-
             }
         }))
 })
