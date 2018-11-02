@@ -54,12 +54,163 @@ header {
 
 section {
     flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
     .ban {
         width: 100%;
         border-bottom: 1px solid #ccc;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+    .container {
+        width: 100%;
+        height: pxTorem(150px);
+        .swiper-pagination {
+            span {
+                padding: 3px;
+            }
+        }
+        .slide {
+            width: 100%;
+            .list {
+                width: 100%;
+                @include box_flex;
+                @include flexWrap();
+                @include justify(space-around);
+                li {
+                    width: 20%;
+                    height: pxTorem(70px);
+                    @include box_flex;
+                    @include align;
+                    @include direction(column);
+                    i.icon {
+                        width: pxTorem(40px);
+                        height: pxTorem(40px);
+                        line-height: pxTorem(40px);
+                        background: yellow;
+                        border-radius: 100%;
+                        text-align: center;
+                        margin: 10px 0;
+                        font-size: pxTorem(20px);
+                    }
+                }
+            }
+        }
+    }
+    .line {
+        width: 100%;
+        height: pxTorem(10px);
+        background: #DDD8CE;
+    }
+    .cont-title {
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+        font-size: pxTorem(16px);
+    }
+    .cont-list {
+        width: 100%;
+        @include sizing;
+        padding: 0 pxTorem(10px);
+        li {
+            width: 100%;
+            border-bottom: 1px solid #949494;
+            dl {
+                width: 100%;
+                padding: 15px;
+                @include box_flex;
+                dt {
+                    flex: 3;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                dd {
+                    flex: 7;
+                    padding: 15px;
+                    .pric {
+                        @include box_flex;
+                        margin-top: pxTorem(40px);
+                        @include justify(space-between);
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        width: 100%;
+        height: pxTorem(35px);
+        line-height: pxTorem(35px);
+        padding: 0 pxTorem(10px);
+        @include box_flex;
+        @include sizing;
+        @include justify(space-between);
+        span {
+            color: #06c1ae;
+            font-size: pxTorem(18px);
+        }
+    }
+    .footer {
+        width: 100%;
+        @include sizing;
+        background: #f0efed;
+        padding: pxTorem(20px);
+        .top {
+            @include box_flex;
+            @include justify(space-between);
+            span {
+                padding: 10px 20px;
+                margin: 0 5px;
+                border: 3px solid #06c1ae;
+                border-radius: 5px;
+            }
+        }
+        .foot-nav {
+            @include box_flex;
+            @include justify(space-around);
+            margin-top: pxTorem(20px);
+            color: #06c1ae;
+            span {
+                border-right: 2px solid #191919;
+                padding-right: pxTorem(15px);
+            }
+            span:last-child {
+                border-right: none;
+            }
+        }
+        .friendly {
+            text-align: center;
+            margin-top: pxTorem(20px);
+            p {
+                @include box_flex;
+                height: pxTorem(20px);
+                line-height: pxTorem(20px);
+                @include justify(space-around);
+                span {
+                    color: #06c1ae;
+                }
+            }
+        }
+        .bottom-s {
+            width: 100%;
+            margin-top: pxTorem(20px);
+            height: pxTprem(90px);
+            @include box_flex;
+            @include align;
+            .line {
+                width: pxTorem(60px);
+                height: 1px;
+                border: 1px solid #999;
+            }
+            p {
+                text-align: center;
+                padding: 0 pxTorem(10px);
+                span {
+                    color: #999;
+                }
+            }
         }
     }
 }
