@@ -52,10 +52,32 @@ header {
     }
 }
 
-section {
+.scroll {
     flex: 1;
+    position: relative;
     overflow-x: hidden;
     overflow-y: auto;
+    .pullDown,
+    .pullUp {
+        width: 100%;
+        height: pxTorem(40px);
+        line-height: pxTorem(40px);
+        text-align: center;
+        font-size: 20px;
+        background: gray;
+        color: #fff;
+        position: absolute;
+        left: 0;
+    }
+    .pullDown {
+        top: pxTorem(-40px);
+    }
+    .pullUp {
+        bottom: pxTorem(-40px);
+    }
+}
+
+section {
     .ban {
         width: 100%;
         border-bottom: 1px solid #ccc;
